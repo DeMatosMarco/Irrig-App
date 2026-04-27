@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Irrig'App</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1a2e1a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="IrrigApp">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2942/2942531.png">
+</head>
+<body>
+
+  <div class="bg-texture"></div>
+<div id="notif-container" style="text-align: center; margin-top: 10px;">
+  <button id="btn-notif" class="btn-primary">🔔 Activer les alertes</button>
+</div>
+
+<div id="alert-banner" style="display:none;"></div>
+  <header>
+    <div class="header-left">
+      <span class="logo">🌿</span>
+      <div>
+        <h1>Irrig'App</h1>
+        <div id="status" class="offline">Déconnecté</div>
+      </div>
+    </div>
+    <button id="install-btn" style="display:none" aria-label="Installer l'application">
+      <span>⬇</span> Installer
+    </button>
+  </header>
+
+  <!-- Bannière alerte sol sec -->
+  <div id="alert-banner" style="display:none"></div>
+
+  <!-- Badge données hors ligne -->
+  <div id="offline-badge" style="display:none">
+    <span>📦</span> Données hors ligne — dernière valeur connue
+  </div>
+
+  <main>
+
+    <!-- Carte humidité du sol -->
+    <div class="card card--soil">
+      <div class="card-label">Humidité du sol</div>
+      <div class="value" id="soil-val">-- %</div>
+      <div class="progress-track">
+        <div id="soil-bar"></div>
+      </div>
+      <div class="legend">
+        <span class="dot dot--danger"></span><span>Sec &lt;30%</span>
+        <span class="dot dot--warn"></span><span>Moyen &lt;60%</span>
+        <span class="dot dot--ok"></span><span>Bon ≥60%</span>
+      </div>
+    </div>
+
+    <!-- Carte température -->
+    <div class="card card--temp">
+      <div class="card-label">Température</div>
+      <div class="value" id="temp-val">-- °C</div>
+    </div>
+
+    <div id="last-update" class="last-update">En attente de données…</div>
+
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js', { scope: './' })
+        .then(reg => console.log('SW enregistré, scope :', reg.scope))
+        .catch(err => console.warn('SW échec :', err));
+    }
+  </script>
+</body>
+</html>
