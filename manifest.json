@@ -12,16 +12,16 @@
   "categories": ["agriculture", "utilities"],
   "icons": [
     {
-      "src": "./icons/irrig'app 192 x 192.png",
+      "src": "./icons/irrig-app-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icons/irrig'app 512 x 512.png",
+      "src": "./icons/irrig-app-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
   ],
   "screenshots": [],

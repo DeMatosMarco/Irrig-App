@@ -40,7 +40,7 @@ function showAlert(msg) {
     navigator.serviceWorker.ready.then((registration) => {
       registration.showNotification("⚠️ Alerte Humidité", {
         body: msg,
-        icon: "https://cdn-icons-png.flaticon.com/512/2942/2942531.png",
+        icon: "./icons/irrig-app-192x192.png",
         vibrate: [200, 100, 200],
         tag: "alerte-humidite",
       });
@@ -164,7 +164,7 @@ function showAlert(msg) {
   if (Notification.permission === "granted") {
     new Notification("IrrigApp — Alerte Sol", {
       body: msg,
-      icon: "https://cdn-icons-png.flaticon.com/512/2942/2942531.png",
+      icon: "./icons/irrig-app-192x192.png",
     });
   }
 }
