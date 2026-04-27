@@ -76,6 +76,13 @@ header {
   line-height: 1;
 }
 
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
 h1 {
   font-size: 1.1rem;
   font-weight: 700;
