@@ -1,5 +1,5 @@
-const CACHE_STATIC = "irrigapp-static-v3.2";
-const CACHE_DATA = "irrigapp-data-v3.2";
+const CACHE_STATIC = "irrigapp-static-v3.1";
+const CACHE_DATA = "irrigapp-data-v3.1";
 const OFFLINE_URL = "offline.html";
 
 const STATIC_ASSETS = [
