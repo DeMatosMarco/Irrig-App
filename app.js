@@ -31,22 +31,22 @@ btnNotif.addEventListener("click", () => {
   });
 });
 
-function showAlert(msg) {
-  if (!alertBanner) return;
-  alertBanner.textContent = msg;
-  alertBanner.style.display = "block";
+// function showAlert(msg) {
+//   if (!alertBanner) return;
+//   alertBanner.textContent = msg;
+//   alertBanner.style.display = "block";
 
-  if (Notification.permission === "granted") {
-    navigator.serviceWorker.ready.then((registration) => {
-      registration.showNotification("⚠️ Alerte Humidité", {
-        body: msg,
-        icon: "./icons/irrig-app-192x192.png",
-        vibrate: [200, 100, 200],
-        tag: "alerte-humidite",
-      });
-    });
-  }
-}
+//   if (Notification.permission === "granted") {
+//     navigator.serviceWorker.ready.then((registration) => {
+//       registration.showNotification("⚠️ Alerte Humidité", {
+//         body: msg,
+//         icon: "./icons/irrig-app-192x192.png",
+//         vibrate: [200, 100, 200],
+//         tag: "alerte-humidite",
+//       });
+//     });
+//   }
+// }
 
 window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
